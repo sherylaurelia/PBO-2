@@ -1,0 +1,111 @@
+import wx
+import wx.xrc
+import wx.grid
+
+
+class MyFrame1 ( wx.Frame ):
+
+	def __init__( self, parent ):
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"HELLO WX", pos = wx.DefaultPosition, size = wx.Size( 1045,711 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+		self.SetBackgroundColour( wx.Colour( 0, 255, 255 ) )
+
+		bSizer1 = wx.BoxSizer( wx.VERTICAL )
+
+		bSizer2 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_staticText1 = wx.StaticText( self, wx.ID_ANY, u"LIFETIME PLAYLISTS\nSHERYL AURELIA \n192410101091", wx.Point( -1,-1 ), wx.Size( 1000,-1 ), 0 )
+		self.m_staticText1.Wrap( -2 )
+
+		self.m_staticText1.SetFont( wx.Font( 16, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Lucida Calligraphy" ) )
+
+		bSizer2.Add( self.m_staticText1, 0, wx.ALL|wx.EXPAND, 5 )
+
+		bSizer14 = wx.BoxSizer( wx.VERTICAL )
+
+
+		bSizer2.Add( bSizer14, 1, wx.EXPAND, 5 )
+
+		bSizer5 = wx.BoxSizer( wx.HORIZONTAL )
+
+		bSizer5.SetMinSize( wx.Size( 1000,20 ) )
+		self.m_staticText4 = wx.StaticText( self, wx.ID_ANY, u"Search by Artist :", wx.DefaultPosition, wx.Size( -1,70 ), 0 )
+		self.m_staticText4.Wrap( -1 )
+
+		bSizer5.Add( self.m_staticText4, 0, wx.ALL, 5 )
+
+		self.m_textCtrl1 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 300,35 ), 0 )
+		bSizer5.Add( self.m_textCtrl1, 0, wx.ALL, 5 )
+
+		self.m_button2 = wx.Button( self, wx.ID_ANY, u"Search", wx.DefaultPosition, wx.Size( 150,-1 ), 0 )
+		self.m_button2.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_SCROLLBAR ) )
+
+		bSizer5.Add( self.m_button2, 0, 0, 5 )
+
+
+		bSizer2.Add( bSizer5, 1, 0, 5 )
+
+		bSizer6 = wx.BoxSizer( wx.HORIZONTAL )
+
+		self.m_grid3 = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 1050,1000 ), 0 )
+
+		# Grid
+		self.m_grid3.CreateGrid( 30, 4 )
+		self.m_grid3.EnableEditing( True )
+		self.m_grid3.EnableGridLines( True )
+		self.m_grid3.SetGridLineColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWFRAME ) )
+		self.m_grid3.EnableDragGridSize( True )
+		self.m_grid3.SetMargins( 0, 0 )
+
+		# Columns
+		self.m_grid3.SetColSize( 0, 281 )
+		self.m_grid3.SetColSize( 1, 219 )
+		self.m_grid3.SetColSize( 2, 209 )
+		self.m_grid3.SetColSize( 3, 207 )
+		self.m_grid3.EnableDragColMove( False )
+		self.m_grid3.EnableDragColSize( True )
+		self.m_grid3.SetColLabelSize( 30 )
+		self.m_grid3.SetColLabelValue( 0, u"Song Title" )
+		self.m_grid3.SetColLabelValue( 1, u"Artist" )
+		self.m_grid3.SetColLabelValue( 2, u"Genre" )
+		self.m_grid3.SetColLabelValue( 3, u"Year" )
+		self.m_grid3.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+
+		# Rows
+		self.m_grid3.AutoSizeRows()
+		self.m_grid3.EnableDragRowSize( True )
+		self.m_grid3.SetRowLabelSize( 80 )
+		self.m_grid3.SetRowLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+
+		# Label Appearance
+
+		# Cell Defaults
+		self.m_grid3.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
+		self.m_grid3.SetFont( wx.Font( 16, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Lucida Handwriting" ) )
+		self.m_grid3.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+		self.m_grid3.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+
+		bSizer6.Add( self.m_grid3, 0, wx.EXPAND, 5 )
+
+		bSizer12 = wx.BoxSizer( wx.VERTICAL )
+
+
+		bSizer6.Add( bSizer12, 1, wx.EXPAND, 5 )
+
+
+		bSizer2.Add( bSizer6, 1, wx.ALL|wx.EXPAND, 5 )
+
+
+		bSizer1.Add( bSizer2, 1, wx.EXPAND, 5 )
+
+
+		self.SetSizer( bSizer1 )
+		self.Layout()
+
+		self.Centre( wx.BOTH )
+
+	def __del__( self ):
+		pass
+
+
